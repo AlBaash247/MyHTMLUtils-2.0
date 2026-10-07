@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="inputLoanAmount" type="number" placeholder="Loan Amount" value="50000" />
+    <input id="inputLoanTermYears" type="number" placeholder="Loan Term Years" value="25" />
+    <input id="inputLoanTermMonths" type="number" placeholder="Loan Term Months" value="0" />
+    <input id="inputLoanInterestRate" type="number" placeholder="Interest Rate" value="4.78" />
+
+
+    <button id="btnSubmit">submit</button>
+
+
+    <h1 id="txtResult"></h1>
+
+
+    <script>
+
+        let inputLoanAmount = document.getElementById("inputLoanAmount")
+        let inputLoanTermYears = document.getElementById("inputLoanTermYears")
+        let inputLoanTermMonths = document.getElementById("inputLoanTermMonths")
+        let inputLoanInterestRate = document.getElementById("inputLoanInterestRate")
+
+        let btnSubmit = document.getElementById("btnSubmit")
+
+        let txtResult = document.getElementById("txtResult")
+
+
+
+
+        btnSubmit.onclick = function () {
+            let loanAmount = parseInt(inputLoanAmount.value)
+            let loanTermYears = parseInt(inputLoanTermYears.value)
+            let loanTermMonths = parseInt(inputLoanTermMonths.value)
+            let loanInterestRate = parseFloat(inputLoanInterestRate.value)
+
+
+            let fullAmount = loanAmount + (loanAmount * loanInterestRate / 100)
+            let r = fullAmount / ((loanTermYears * 12) + loanTermMonths)
+            console.log(fullAmount, loanTermYears * 12, loanTermMonths);
+            
+            txtResult.innerText = fullAmount, loanTermYears * 12, loanTermMonths
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
